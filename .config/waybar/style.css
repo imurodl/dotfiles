@@ -12,6 +12,7 @@ window#waybar {
 }
 
 /* All modules get pill background */
+#custom-updates,
 #workspaces,
 #clock,
 #battery,
@@ -20,7 +21,7 @@ window#waybar {
 #cpu,
 #memory,
 #tray {
-    background-color: rgba(26, 26, 46, 0.95);
+    background-color: rgba(26, 26, 46, 0.9);
     padding: 2px 12px;
     margin: 3px 2px;
     border-radius: 15px;
@@ -47,6 +48,11 @@ window#waybar {
 #workspaces button.active {
     color: #1793d1;
     background: rgba(23, 147, 209, 0.2);
+}
+
+/* Updates - green */
+#custom-updates {
+    color: #6bcb77;
 }
 
 /* Clock */
