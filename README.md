@@ -9,6 +9,7 @@ My Arch Linux + Hyprland configuration.
 - **waybar** — Status bar
 - **wofi** — App launcher
 - **mako** — Notifications
+- **nvim** — Neovim editor
 
 ## Installation
 
@@ -22,12 +23,13 @@ ln -s ~/dotfiles/.config/kitty ~/.config/kitty
 ln -s ~/dotfiles/.config/waybar ~/.config/waybar
 ln -s ~/dotfiles/.config/wofi ~/.config/wofi
 ln -s ~/dotfiles/.config/mako ~/.config/mako
+ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 ```
 
 ## Dependencies
 
 ```bash
-sudo pacman -S hyprland kitty waybar wofi mako grim slurp wl-clipboard swaybg
+sudo pacman -S hyprland kitty waybar wofi mako grim slurp wl-clipboard swaybg neovim
 ```
 
 ## Theme
