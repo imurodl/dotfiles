@@ -1,40 +1,67 @@
 * {
-    font-family: JetBrainsMono Nerd Font, Inter;
+    font-family: JetBrainsMono Nerd Font, Inter, sans-serif;
     font-size: 13px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 window#waybar {
-    background-color: #1a1a2e;
-    color: #e0e0f0;
-    border-bottom: 2px solid #1793d1;
-}
-
-#workspaces button {
-    padding: 0 8px;
-    color: #e0e0f0;
     background: transparent;
-    border: none;
-    border-radius: 0;
+    color: #e0e0f0;
 }
 
-#workspaces button:hover {
-    background: #2a2a4e;
-}
-
-#workspaces button.active {
-    color: #1793d1;
-    border-bottom: 2px solid #1793d1;
-}
-
+/* All modules get pill background */
+#workspaces,
 #clock,
 #battery,
 #network,
 #pulseaudio,
+#cpu,
+#memory,
 #tray {
-    padding: 0 10px;
+    background-color: rgba(26, 26, 46, 0.95);
+    padding: 2px 12px;
+    margin: 3px 2px;
+    border-radius: 15px;
 }
 
-#battery.charging {
+/* Workspaces */
+#workspaces {
+    padding: 2px 6px;
+}
+
+#workspaces button {
+    padding: 1px 8px;
+    color: #888;
+    background: transparent;
+    border: none;
+    border-radius: 15px;
+}
+
+#workspaces button:hover {
+    background: rgba(23, 147, 209, 0.3);
+    color: #e0e0f0;
+}
+
+#workspaces button.active {
+    color: #1793d1;
+    background: rgba(23, 147, 209, 0.2);
+}
+
+/* Clock */
+#clock {
+    color: #e0e0f0;
+    font-weight: bold;
+}
+
+/* Volume - pink */
+#pulseaudio {
+    color: #ff79c6;
+}
+
+/* Battery - green */
+#battery {
     color: #6bcb77;
 }
 
@@ -46,6 +73,26 @@ window#waybar {
     color: #ff6b6b;
 }
 
+/* Network - purple */
+#network {
+    color: #bd93f9;
+}
+
 #network.disconnected {
     color: #ff6b6b;
+}
+
+/* CPU - arch blue */
+#cpu {
+    color: #1793d1;
+}
+
+/* Memory - orange */
+#memory {
+    color: #ffb86c;
+}
+
+/* Tray */
+#tray {
+    padding: 2px 8px;
 }

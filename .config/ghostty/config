@@ -1,0 +1,37 @@
+# Font
+font-family = JetBrainsMono Nerd Font
+font-size = 11
+
+# Arch blue theme
+background = #1a1a2e
+foreground = #e0e0f0
+cursor-color = #1793d1
+selection-background = #2a2a4e
+selection-foreground = #e0e0f0
+
+# Colors (base16-style)
+palette = 0=#1a1a2e
+palette = 1=#ff6b6b
+palette = 2=#6bcb77
+palette = 3=#ffd93d
+palette = 4=#1793d1
+palette = 5=#c792ea
+palette = 6=#89ddff
+palette = 7=#e0e0f0
+palette = 8=#2a2a4e
+palette = 9=#ff8a8a
+palette = 10=#8ae69a
+palette = 11=#ffe566
+palette = 12=#4dabf5
+palette = 13=#ddb3f0
+palette = 14=#a8e8ff
+palette = 15=#ffffff
+
+# Window
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = false
+
+# Behavior
+copy-on-select = clipboard
+mouse-hide-while-typing = true
