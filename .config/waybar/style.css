@@ -13,6 +13,7 @@ window#waybar {
 
 /* All modules get pill background */
 #custom-updates,
+#custom-power,
 #workspaces,
 #clock,
 #battery,
@@ -121,4 +122,9 @@ window#waybar {
 /* Tray */
 #tray {
     padding: 2px 8px;
+}
+
+/* Power - red */
+#custom-power {
+    color: #ff6b6b;
 }

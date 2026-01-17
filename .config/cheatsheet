@@ -1,0 +1,35 @@
+HYPRLAND                          │ PACKAGES
+  Super+V      Toggle floating    │   pacman -Syu      Update
+  Super+`      Scratchpad         │   pacman -S        Install
+  Super+Shift+1-9 Move to ws      │   pacman -Rs       Remove
+  Super+M      Exit               │   pacman -Ss       Search
+  Super+P      Pseudo tile        │   yay -S           AUR install
+  Super+J      Toggle split       │   yay -Syu         Update all
+                                  │
+SYSTEMD                           │ WIFI (iwd)
+  systemctl status   Check        │   iwctl                    Shell
+  systemctl start    Start        │   station wlan0 scan       Scan
+  systemctl stop     Stop         │   station wlan0 get-networks
+  systemctl restart  Restart      │   station wlan0 connect    Connect
+  systemctl enable   Boot on      │   station wlan0 show       Status
+  journalctl -xe     Logs         │
+                                  │ HTOP
+GIT                               │   k  Kill    q  Quit
+  git status    Changes           │   /  Search  t  Tree
+  git add .     Stage             │   >  Sort    <  Sort back
+  git commit -m Commit            │
+  git push      Push              │ USEFUL
+  git pull      Pull              │   df -h     Disk
+  git log       History           │   free -h   Memory
+  git diff      Diff              │   ip addr   IP
+                                  │
+ZEN BROWSER                       │ NEOVIM
+  Ctrl+T       New tab            │   ciw  Change word  diw  Delete word
+  Ctrl+W       Close tab          │   ci"  Change in "  di"  Delete in "
+  Ctrl+Shift+T Reopen             │   yy   Copy line    p    Paste
+  Ctrl+Tab     Next tab           │   .    Repeat last  %    Match bracket
+  Ctrl+L       Address bar        │   Ctrl+r  Redo      u    Undo
+  Ctrl+F       Find               │   :sp  Split horiz  :vsp Split vert
+  Ctrl+D       Bookmark           │   :%s/old/new/g     Replace all
+
+WAYBAR: Volume→pavucontrol  Battery→stats  Network→iwgtk  Bluetooth→blueman  CPU/Mem→htop

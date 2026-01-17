@@ -9,7 +9,7 @@
 
     "modules-left": ["custom/updates", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery", "network", "bluetooth", "temperature", "cpu", "memory", "tray"],
+    "modules-right": ["pulseaudio", "battery", "network", "bluetooth", "temperature", "cpu", "memory", "tray", "custom/power"],
 
     "custom/updates": {
         "exec": "~/.config/waybar/scripts/updates.sh",
@@ -86,5 +86,11 @@
 
     "tray": {
         "spacing": 8
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/power-menu.sh"
     }
 }
