@@ -9,7 +9,7 @@
 
     "modules-left": ["custom/updates", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery", "network", "cpu", "memory", "tray"],
+    "modules-right": ["pulseaudio", "battery", "network", "bluetooth", "temperature", "cpu", "memory", "tray"],
 
     "custom/updates": {
         "exec": "~/.config/waybar/scripts/updates.sh",
@@ -53,6 +53,23 @@
         "format": "󰕾 {volume}%",
         "format-muted": "󰝟 MUTE",
         "on-click": "pkill pavucontrol || pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {device_battery_percentage}%",
+        "format-off": "󰂲",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{device_alias}",
+        "on-click": "pkill blueman-manager || blueman-manager"
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+        "format": "󰔏 {temperatureC}°C",
+        "critical-threshold": 80,
+        "format-critical": "󰔏 {temperatureC}°C",
+        "interval": 5
     },
 
     "cpu": {

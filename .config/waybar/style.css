@@ -18,6 +18,8 @@ window#waybar {
 #battery,
 #network,
 #pulseaudio,
+#bluetooth,
+#temperature,
 #cpu,
 #memory,
 #tray {
@@ -85,6 +87,24 @@ window#waybar {
 }
 
 #network.disconnected {
+    color: #ff6b6b;
+}
+
+/* Bluetooth - cyan */
+#bluetooth {
+    color: #8be9fd;
+}
+
+#bluetooth.connected {
+    color: #8be9fd;
+}
+
+/* Temperature - yellow */
+#temperature {
+    color: #ffd93d;
+}
+
+#temperature.critical {
     color: #ff6b6b;
 }
 
