@@ -10,6 +10,7 @@ My Arch Linux + Hyprland configuration.
 - **wofi** — App launcher
 - **mako** — Notifications
 - **nvim** — Neovim editor
+- **tmux** — Terminal multiplexer with session persistence
 
 ## Installation
 
@@ -24,6 +25,12 @@ ln -s ~/dotfiles/.config/waybar ~/.config/waybar
 ln -s ~/dotfiles/.config/wofi ~/.config/wofi
 ln -s ~/dotfiles/.config/mako ~/.config/mako
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+# Install TPM (Tmux Plugin Manager)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Then open tmux and press Ctrl+b I to install plugins
 ```
 
 ## Dependencies
