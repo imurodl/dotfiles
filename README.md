@@ -27,10 +27,6 @@ ln -s ~/dotfiles/.config/mako ~/.config/mako
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 ln -s ~/dotfiles/.config/tmux ~/.config/tmux
 
-# Install TPM (Tmux Plugin Manager)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# Then open tmux and press Ctrl+b I to install plugins
 ```
 
 ## Dependencies
