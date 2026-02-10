@@ -38,6 +38,21 @@ require("lazy").setup({
         end,
     },
     { "theprimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
+            require("nvim-tree").setup({
+                view = { width = 30 },
+                filters = { custom = { "__pycache__", "node_modules", ".venv" } },
+                git = { enable = true },
+            })
+            vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
+            vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeFindFile<CR>", { desc = "Find file in tree" })
+        end,
+    },
     { "mbbill/undotree" },
     { "tpope/vim-fugitive" },
     {
