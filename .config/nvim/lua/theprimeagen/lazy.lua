@@ -29,7 +29,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter").setup()
-            require("nvim-treesitter").install({ "vimdoc", "javascript", "typescript", "c", "lua", "rust" })
+            require("nvim-treesitter").install({ "vimdoc", "javascript", "typescript", "c", "lua", "rust", "python" })
             vim.api.nvim_create_autocmd("FileType", {
                 callback = function()
                     pcall(vim.treesitter.start)
@@ -38,4 +38,33 @@ require("lazy").setup({
         end,
     },
     { "theprimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
+    { "mbbill/undotree" },
+    { "tpope/vim-fugitive" },
+    {
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v4.x",
+        lazy = true,
+        config = false,
+    },
+    {
+        "williamboman/mason.nvim",
+        lazy = false,
+        opts = {},
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            { "L3MON4D3/LuaSnip" },
+        },
+    },
+    {
+        "neovim/nvim-lspconfig",
+        cmd = { "LspInfo", "LspInstall", "LspStart" },
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "williamboman/mason-lspconfig.nvim" },
+        },
+    },
 })
