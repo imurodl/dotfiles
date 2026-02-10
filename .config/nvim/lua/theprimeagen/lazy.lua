@@ -56,7 +56,48 @@ require("lazy").setup({
         event = "InsertEnter",
         dependencies = {
             { "L3MON4D3/LuaSnip" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
         },
+    },
+    {
+        "stevearc/conform.nvim",
+        event = "BufWritePre",
+        opts = {
+            format_on_save = {
+                timeout_ms = 3000,
+                lsp_format = "fallback",
+            },
+            formatters_by_ft = {
+                python = { "ruff_format", "ruff_organize_imports" },
+                javascript = { "prettier" },
+                typescript = { "prettier" },
+                html = { "prettier" },
+                css = { "prettier" },
+            },
+        },
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = {
+            on_attach = function(bufnr)
+                local gs = require('gitsigns')
+                local opts = { buffer = bufnr }
+
+                vim.keymap.set("n", "]h", gs.next_hunk, vim.tbl_extend("force", opts, { desc = "Next git hunk" }))
+                vim.keymap.set("n", "[h", gs.prev_hunk, vim.tbl_extend("force", opts, { desc = "Prev git hunk" }))
+                vim.keymap.set("n", "<leader>hp", gs.preview_hunk, vim.tbl_extend("force", opts, { desc = "Preview hunk" }))
+                vim.keymap.set("n", "<leader>hs", gs.stage_hunk, vim.tbl_extend("force", opts, { desc = "Stage hunk" }))
+                vim.keymap.set("n", "<leader>hr", gs.reset_hunk, vim.tbl_extend("force", opts, { desc = "Reset hunk" }))
+                vim.keymap.set("n", "<leader>hb", gs.blame_line, vim.tbl_extend("force", opts, { desc = "Blame line" }))
+            end,
+        },
+    },
+    { "j-hui/fidget.nvim", opts = {} },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {},
     },
     {
         "folke/which-key.nvim",
