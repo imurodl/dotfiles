@@ -109,7 +109,21 @@ require("lazy").setup({
         },
     },
     { "j-hui/fidget.nvim", opts = {} },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        config = function()
+            local hooks = require("ibl.hooks")
+            hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+                vim.api.nvim_set_hl(0, "IblCustom", { fg = "#3a3a4a" })
+                vim.api.nvim_set_hl(0, "IblScopeCustom", { fg = "#555566" })
+            end)
+            require("ibl").setup({
+                indent = { highlight = { "IblCustom" } },
+                scope = { highlight = { "IblScopeCustom" } },
+            })
+        end,
+    },
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
