@@ -75,13 +75,13 @@
     "cpu": {
         "format": "󰓅 {usage}%",
         "interval": 2,
-        "on-click": "pkill htop || ghostty -e htop"
+        "on-click": "pid=$(hyprctl clients -j | jq -r '.[] | select(.initialTitle==\"btop\") | .pid'); [ -n \"$pid\" ] && kill $pid || ghostty --title=btop -e btop"
     },
 
     "memory": {
         "format": "󰍛 {used:0.1f}G/{total:0.1f}G",
         "interval": 2,
-        "on-click": "pkill htop || ghostty -e htop"
+        "on-click": "pid=$(hyprctl clients -j | jq -r '.[] | select(.initialTitle==\"btop\") | .pid'); [ -n \"$pid\" ] && kill $pid || ghostty --title=btop -e btop"
     },
 
     "tray": {
