@@ -1,2 +1,2 @@
 require("theprimeagen.remap")
-print("Hello from primeagen")
+require("theprimeagen.lazy")
