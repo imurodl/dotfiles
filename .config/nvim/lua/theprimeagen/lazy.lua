@@ -109,6 +109,7 @@ require("lazy").setup({
         },
     },
     { "j-hui/fidget.nvim", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
