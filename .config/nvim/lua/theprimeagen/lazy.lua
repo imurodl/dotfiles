@@ -29,7 +29,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter").setup()
-            require("nvim-treesitter").install({ "vimdoc", "javascript", "typescript", "c", "lua", "rust", "python" })
+            require("nvim-treesitter").install({ "vimdoc", "javascript", "typescript", "c", "lua", "rust", "python", "json", "markdown", "markdown_inline" })
             vim.api.nvim_create_autocmd("FileType", {
                 callback = function()
                     pcall(vim.treesitter.start)
@@ -46,7 +46,7 @@ require("lazy").setup({
             vim.g.loaded_netrwPlugin = 1
             require("nvim-tree").setup({
                 view = { width = 30 },
-                filters = { custom = { "__pycache__", "node_modules", ".venv" } },
+                filters = { custom = { "__pycache__", "node_modules", ".venv" }, git_ignored = false },
                 git = { enable = true },
             })
             vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
@@ -78,19 +78,22 @@ require("lazy").setup({
     {
         "stevearc/conform.nvim",
         event = "BufWritePre",
-        opts = {
-            format_on_save = {
-                timeout_ms = 3000,
-                lsp_format = "fallback",
-            },
-            formatters_by_ft = {
-                python = { "ruff_format", "ruff_organize_imports" },
-                javascript = { "prettier" },
-                typescript = { "prettier" },
-                html = { "prettier" },
-                css = { "prettier" },
-            },
-        },
+        config = function()
+            vim.opt.autowriteall = true
+            require("conform").setup({
+                format_on_save = {
+                    timeout_ms = 3000,
+                    lsp_format = "fallback",
+                },
+                formatters_by_ft = {
+                    python = { "ruff_format", "ruff_organize_imports" },
+                    javascript = { "prettier" },
+                    typescript = { "prettier" },
+                    html = { "prettier" },
+                    css = { "prettier" },
+                },
+            })
+        end,
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -127,6 +130,12 @@ require("lazy").setup({
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
+        opts = {},
+    },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        ft = { "markdown" },
         opts = {},
     },
     {
