@@ -11,6 +11,7 @@ My Arch Linux + Hyprland configuration.
 - **mako** — Notifications
 - **nvim** — Neovim editor
 - **tmux** — Terminal multiplexer with session persistence
+- **zed** — Editor (macOS): Arch Blue theme matching Ghostty, terminal panel for tmux + Claude Code
 
 ## Installation
 
@@ -26,6 +27,7 @@ ln -s ~/dotfiles/.config/wofi ~/.config/wofi
 ln -s ~/dotfiles/.config/mako ~/.config/mako
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 ln -s ~/dotfiles/.config/tmux ~/.config/tmux
+ln -s ~/dotfiles/.config/zed ~/.config/zed      # macOS
 
 ```
 

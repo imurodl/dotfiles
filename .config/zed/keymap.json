@@ -1,0 +1,24 @@
+// Zed keymap — https://zed.dev/docs/key-bindings
+[
+  {
+    // Terminal panel: let tmux see Alt+arrows (Zed rebinds them to word-jump by default)
+    "context": "Terminal",
+    "bindings": {
+      "alt-left": null,
+      "alt-right": null,
+      "alt-up": null,
+      "alt-down": null,
+      "cmd-k": null // keep Ctrl+L / tmux clear semantics instead of Zed's clear
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": "terminal_panel::ToggleFocus", // ctrl+` also works (default)
+      "cmd-shift-j": "workspace::ToggleBottomDock",
+      "cmd-e": "project_panel::ToggleFocus",
+      "cmd-shift-o": "outline_panel::ToggleFocus",
+      "cmd-shift-a": "agent::ToggleFocus"
+    }
+  }
+]

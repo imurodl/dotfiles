@@ -1,0 +1,99 @@
+// Zed settings — https://zed.dev/docs/configuring-zed
+// Goal: one window replacing Ghostty + VS Code. Editor for reading, tmux + Claude Code
+// in the terminal panel. Theme matches the Ghostty "Arch Blue" setup (~/.config/zed/themes).
+{
+  // ---- Look: same as Ghostty --------------------------------------------------
+  "theme": { "mode": "dark", "dark": "Arch Blue", "light": "Arch Blue" },
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 14,
+  "buffer_line_height": "standard",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 15,
+  "cursor_blink": false,
+  "cursor_shape": "block",
+  "window_background_appearance": "blurred", // 90% opacity like Ghostty (theme colours carry alpha)
+
+  // ---- Terminal: Ghostty-equivalent -------------------------------------------
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 14,
+    "line_height": "standard",
+    "shell": "system", // zsh, same profile Ghostty used
+    "working_directory": "current_project_directory",
+    "option_as_meta": true, // Ghostty macos-option-as-alt: Alt+arrows reach tmux
+    "copy_on_select": true, // Ghostty copy-on-select
+    "cursor_shape": "block",
+    "blinking": "off",
+    "alternate_scroll": "on", // mouse wheel scrolls inside tmux/nvim
+    "scrollbar": { "show": "never" },
+    "dock": "bottom",
+    "default_height": 480,
+    "detect_venv": { "on": { "directories": [".venv", "venv"], "activate_script": "default" } },
+    "toolbar": { "breadcrumbs": false }
+  },
+
+  // ---- Editor behaviour --------------------------------------------------------
+  "tab_size": 4,
+  "soft_wrap": "none",
+  "wrap_guides": [],
+  "relative_line_numbers": false,
+  "scroll_beyond_last_line": "one_page",
+  "vertical_scroll_margin": 4,
+  "autosave": "on_focus_change",
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "show_whitespaces": "none",
+  "indent_guides": { "enabled": true, "coloring": "indent_aware" },
+  "inlay_hints": { "enabled": false },
+  "preview_tabs": { "enabled": true, "enable_preview_from_file_finder": true },
+  "git": { "inline_blame": { "enabled": true, "delay_ms": 600 }, "git_gutter": "tracked_files" },
+  "project_panel": { "dock": "left", "default_width": 260, "auto_reveal_entries": true, "indent_guides": { "show": "always" } },
+  "outline_panel": { "dock": "right" },
+  "agent": { "dock": "right", "default_width": 520 },
+  "collaboration_panel": { "button": false },
+  "chat_panel": { "button": "never" },
+  "notification_panel": { "button": false },
+
+  "languages": {
+    "Markdown": { "soft_wrap": "editor_width", "format_on_save": "off" },
+    "Plain Text": { "soft_wrap": "editor_width" },
+    "Python": { "formatter": [{ "language_server": { "name": "ruff" } }], "language_servers": ["pyright", "ruff"] },
+    "JavaScript": { "formatter": "prettier" },
+    "TypeScript": { "formatter": "prettier" },
+    "TSX": { "formatter": "prettier" },
+    "JSON": { "formatter": "prettier" },
+    "CSS": { "formatter": "prettier" },
+    "HTML": { "formatter": "prettier" }
+  },
+
+  "lsp": {
+    "lua-language-server": {
+      "settings": { "Lua": { "diagnostics": { "globals": ["vim"] } } }
+    }
+  },
+
+  // ---- AI --------------------------------------------------------------------
+  "edit_predictions": { "provider": "ollama" },
+  "agent_servers": {
+    "github-copilot-cli": { "type": "registry" },
+    "codex-acp": { "type": "registry" },
+    "claude-acp": { "type": "registry" }
+  },
+
+  // Languages not built into Zed — installed automatically on startup
+  "auto_install_extensions": {
+    "lua": true,
+    "toml": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "sql": true,
+    "env": true,
+    "make": true,
+    "nginx": true,
+    "ssh-config": true
+  },
+
+  "base_keymap": "Zed",
+  "telemetry": { "diagnostics": false, "metrics": false }
+}

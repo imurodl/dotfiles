@@ -1,0 +1,2 @@
+# Zed runtime data (LMDB), not config
+.config/zed/prompts/
